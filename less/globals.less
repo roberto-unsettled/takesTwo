@@ -1,0 +1,33 @@
+// out: ../css/styles.css, compress: true, "autoprefix": "cover 99.5% in US"
+
+@colorBgOut:        #626262;
+@colorBg:           #436956;
+
+
+@color1:            #fff;
+@color2:            #e1e1e1;
+@color3:            #ffa500;
+
+
+
+
+@max-width-site:        1270px;
+@padding-container:     60px;
+@cta-border-radious:    3px;
+
+@import "reset.less";
+@import "mixin.less";
+
+body {
+    color:              @color1;
+    background-color:   @colorBgOut;
+  }
+  p {
+      font-weight:      300;
+  }
+  b, strong {
+      font-weight:      400;
+  }
+
+@import "styles.less";
+@import "media.less";

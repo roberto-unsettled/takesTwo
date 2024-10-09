@@ -1,0 +1,247 @@
+//main: globals.less
+
+
+/////animations------------------------------------------------------------
+    
+.animationFade {
+    opacity: 0.1;
+    transition: opacity 0.5s 0.1s;
+}
+.animationFade.animated{
+    opacity: 1;
+}
+
+//start animationBottomToTop -----------
+@topStart:			    -100px;
+@topEnd:			    120px;
+@topEndPlus:			@topEnd  + 10px;
+
+.animatedTopBottomBounce {
+    0% { top:		    @topStart; }
+    80% { top:          @topEndPlus; }
+    100% { top: 	    @topEnd; }
+}
+@keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+@-webkit-keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+@-ms-keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+@-moz-keyframes animationTopBottomBounce {
+    .animatedTopBottomBounce;
+}
+
+//start animationSepia -----------
+@filterStart:			sepia(0.2);
+@filterPlus:            sepia(1);
+@filterEnd:			    sepia(0);
+
+.animatedSepia {
+    0% { filter:		@filterStart; }
+    40% { filter:       @filterPlus; }
+    100% { filter: 	    @filterEnd; }
+}
+@keyframes animationSepia {
+    .animatedSepia;
+}
+@-webkit-keyframes animationSepia {
+    .animatedSepia;
+}
+@-ms-keyframes animationSepia {
+    .animatedSepia;
+}
+@-moz-keyframes animationSepia {
+    .animatedSepia;
+}
+
+// animations Time Line ----
+
+@timeAnimation_1:           0.6s;
+@delayAnimation_1:          0s;
+@timeAnimation_sepia:       2.2s;
+@delayAnimation_sepia:       .8s;
+
+
+
+// animations Time Line ----
+/* ==========================================================================
+User Styles
+========================================================================== */
+
+#total-wrapper {
+    background-color:               @colorBgOut;
+    font-family:                    'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.site-wrapper {
+    margin:                         0 auto;
+    max-width:                      (@max-width-site - (@padding-container * 2));
+    background-color:               @colorBg;
+    position:                       relative;
+    overflow:                       hidden;
+}
+.row{
+    padding:                        (@padding-container/2) @padding-container;
+}
+
+.container-section {
+    position:                       relative;
+}
+
+.image {
+    width:                          100%;
+    height:                         auto;
+    position:                       relative;
+    transition:                     opacity .3s ease, filter .2s ease-out .1s;
+}
+.lazy-image {
+    min-height:                     300px;
+    background-color:               @color2;
+    display:                        inline-block;
+    filter:                         blur(12px);
+    opacity:                        0;
+}
+
+.cover {
+    padding: 0;
+}
+.cover-heading {
+    margin: 0;
+}
+.title-general{
+    text-transform:                 uppercase;
+    font-family:                    'Bricolage Grotesque', sans-serif;
+}
+
+.title-1 {
+    font-size:                      161px;
+    text-align:                     justify;
+    line-height:                    71%;
+}
+.title-2 {
+    color:                          @color2;
+    text-align:                     center;
+    font-size:                      35px;
+    line-height:                    88%;
+    margin-top:                     (@padding-container/1);
+    
+}
+.title-3 {
+    font-size:                      75px;
+    line-height:                    79%;
+    margin-bottom:                  (@padding-container/2);
+    
+}
+.title-4 {
+    color:                          @color2;
+    text-align:                     center;
+    font-size:                      30px;
+    line-height:                    79%;
+    letter-spacing:                 3px;
+    position:                       relative;
+    @lineDistance:                  114px;
+    &::after,
+    &::before {
+        content:                    "-";
+        position:                   absolute;
+        top:                        0;
+        display:                    block;
+    }
+    &::before{
+        left:                       @lineDistance;
+    }
+    &::after {
+        right:                      @lineDistance;
+    }
+}
+
+.subtitle{
+    display:                        inline-block;
+    text-transform:                 uppercase;
+    font-size:                      30px;
+    margin:                         (@padding-container/4) 0;
+}
+
+.text-regular {
+    font-size:                      21px;
+    text-transform:                 uppercase;
+    margin-bottom:                  (@padding-container/4);
+    opacity:                        .2;
+    transition:                     opacity .3s ease .25s;
+    b {
+        font-weight:                 400;
+        opacity:                    .5;
+        transition:                 opacity .3s ease .8s;
+    }
+    &:last-child {
+        margin-bottom:               0;
+    }
+    &.visible{
+        opacity:                    1;
+        b {
+            opacity:                1;
+        }
+    }
+}
+
+.introduction-image-1 {
+    padding-left:                   @padding-container;
+}
+
+.introduction-image-2, .introduction-image-3 {
+    padding-right:                   @padding-container;
+}
+
+.full-section-container-1 {
+    background-image:               url('../img/triangle.svg');
+    background-repeat:              no-repeat;
+    background-size:                auto 100%;
+}
+.full-section-container-2 {
+    background-image:               url('../img/hexagono.svg');
+    background-repeat:              no-repeat;
+    background-size:                auto 100%;
+    background-position-x:          -540px;
+}
+.footer {
+    padding:                        (@padding-container/2) 0;
+}
+.big-mail{
+    display:                        block;
+    font-size:                      63px;
+    line-height:                    80px;
+    transform:                      scale(1, 1.6);
+    position:                       relative;
+    width:                          100%;
+    text-align:                     center;
+    cursor:                         pointer;
+    &::before {
+        .absoluteTopLeft();
+        .size(100%,0);
+        content:                    "copied! see you soon ;D";
+        overflow:                   hidden;
+        font-size:                  30px;
+        line-height:                80px;
+        text-align:                 center;
+        z-index:                    0;
+        opacity:                    0;
+        transition:                 opacity .4s, height .4s;
+    }
+    &.copied{
+        &::before {
+           height:                  100%;
+           opacity:                 0.97;
+           z-index:                 20;
+           background-color:        @color3;
+        }
+    }
+    &::after {
+        .absoluteBottomLeft(20px,0);
+        .size(100%,16px);
+        content:                    "tap to copy";
+        font-size:                   12px;
+        opacity:                     0.5;
+   }
+}//big_mail

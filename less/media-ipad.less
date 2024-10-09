@@ -1,0 +1,45 @@
+//main: globals.less
+
+.title-1 {
+    font-size:              82px;
+}
+
+.title-2 {
+    font-size:              19px;
+    line-height:            120%;
+}
+.title-3 {
+    font-size:              57px;
+    //margin-bottom:         (@padding-container/4);
+}
+
+.title-4 {
+    @lineDistance:                  34px;
+    &::after,
+    &::before {
+        top:                10px;
+    }
+    &::before{
+        left:                       @lineDistance;
+    }
+    &::after {
+        right:                      @lineDistance;
+    }
+}
+
+.subtitle {
+    font-size:              16px;
+}
+
+.introduction-image{
+    padding:                0;
+}
+.full-section-container-2 {
+    background-position-x:  center;
+}
+.introduction-image-3 {
+    margin-bottom:          (@padding-container/4);
+}
+.big-mail {
+    font-size:              39px;
+}
